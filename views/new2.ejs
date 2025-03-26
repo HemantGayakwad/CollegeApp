@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratap College</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Pratap College</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/pca">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <form method="post" action="/tybca">
+            <div class="formb">
+                <h1>Add New Student</h1>
+                <br><br>
+                <h2>Enter Student Name</h2>
+                <br>
+                <input name="tybcaStudents[name]" placeholder="Enter Name" type="text "/>
+                <br><br>
+                <h2>Enter Student Mo.No</h2>
+                <br>
+                <input name="tybcaStudents[mono]" placeholder="+91 000000000" type="number"/>
+                <br><br>
+                <h2>Enter Village</h2>
+                <br>
+                <input name="tybcaStudents[village]" placeholder="e.g.Amalner" type="text"/>
+                <br>
+                <h2>Enter presenty</h2>
+                <br>
+                <input name="tybcaStudents[present]" value="0" type="text"/>
+                <br>
+                <h2>Enter GPA</h2>
+                <br>
+                <input name="tybcaStudents[gpa]" value="0" type="text"/>
+                <button class="links"> Add </button>
+            </div>
+        </form>
+    </div>
+    <br><br>
+    <%- include("includes/foot.ejs") %>

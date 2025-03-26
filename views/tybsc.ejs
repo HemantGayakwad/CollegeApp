@@ -1,0 +1,16 @@
+<%- include("includes/head.ejs") %>
+    <hr>
+    <h1> TYBSC </h1>
+    <br><br>
+    <% for(let student of allStudents){ %>
+        <div class="container">
+            <div class="one"> <%= student.name %> </div>
+            <a class="see" href="/tybsc/<%= student._id %>"> see</a>
+        </div>
+    <% } %>
+    <br><br>
+    <form method="get" action="/tybsc/new">
+        <button class="see"> Add Student </button>
+    </form>
+    <br><br><br>
+    <%- include("includes/foot.ejs") %>
