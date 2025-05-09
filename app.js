@@ -29,7 +29,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(bodyParser.json());
 
-app.get("/pca",(req,res)=>{
+app.get("/",(req,res)=>{
     res.render("home.ejs");
 })
 app.get("/tybca",async (req,res)=>{
