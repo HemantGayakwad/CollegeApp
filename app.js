@@ -32,23 +32,23 @@ app.use(bodyParser.json());
 app.get("/",(req,res)=>{
     res.render("home.ejs");
 })
-app.get("/tybca",async (req,res)=>{
+app.get("collegeapp-wabm.onrender.com/tybca",async (req,res)=>{
     const allStudents = await Bcastudent.find({});
     res.render("tybca.ejs",{allStudents});
 });
 
-app.get("/tybsc",async (req,res)=>{
+app.get("collegeapp-wabm.onrender.com/tybsc",async (req,res)=>{
     const allStudents = await Student.find({});
     res.render("tybsc.ejs",{allStudents});
 });
 
-app.post("/tybsc",async (req,res)=>{
+app.post("collegeapp-wabm.onrender.com/tybsc",async (req,res)=>{
     const newstudent = new Student(req.body.tyStudents);
     await newstudent.save();
     res.redirect("/tybsc");
 });
 
-app.post("/tybca",async (req,res)=>{
+app.post("collegeapp-wabm.onrender.com/tybca",async (req,res)=>{
     const newstudent = new Bcastudent(req.body.tybcaStudents);
     await newstudent.save();
     res.redirect("/tybca");
@@ -56,23 +56,23 @@ app.post("/tybca",async (req,res)=>{
 
 // new route
 
-app.get("/tybsc/new",async (req,res)=>{
+app.get("collegeapp-wabm.onrender.com/tybsc/new",async (req,res)=>{
     res.render("new.ejs");
 });
 
-app.get("/tybca/new",async (req,res)=>{
+app.get("collegeapp-wabm.onrender.com/tybca/new",async (req,res)=>{
     res.render("new2.ejs");
 });
 
 // show route
 
-app.get("/tybsc/:id",async (req,res)=>{
+app.get("collegeapp-wabm.onrender.com/tybsc/:id",async (req,res)=>{
     let {id}= req.params;
     const student = await Student.findById(id);
     res.render("show.ejs",{student});
 })
 
-app.get("/tybca/:id",async (req,res)=>{
+app.get("collegeapp-wabm.onrender.com/tybca/:id",async (req,res)=>{
     let {id}= req.params;
     const student = await Bcastudent.findById(id);
     res.render("show2.ejs",{student});
